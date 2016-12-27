@@ -27,6 +27,8 @@ namespace Data_Templates_Sample.ViewModels
             }
         }
 
+        public event EventHandler OnRequestClose;
+
         private RelayCommand _AcceptCommand;
 
         public ICommand AcceptCommand
@@ -55,6 +57,7 @@ namespace Data_Templates_Sample.ViewModels
         private void OnAcceptCommand()
         {
             OkayClicked = true;
+            OnRequestClose(this, new EventArgs());
         }
               
         public bool OkayClicked { get; set; }

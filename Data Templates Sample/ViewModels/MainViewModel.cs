@@ -90,13 +90,13 @@ namespace Data_Templates_Sample.ViewModels
         private void OnLaunchCommand()
         {
             SettingsView view = new SettingsView();
-            SettingsViewModel viewMoodel = new SettingsViewModel();
-            viewMoodel.SettingsCollection = SettingsCollection;
-            view.DataContext = viewMoodel;
-
+            SettingsViewModel viewModel = new SettingsViewModel();
+            viewModel.SettingsCollection = SettingsCollection;
+            view.DataContext = viewModel;
+            viewModel.OnRequestClose += (t, e) => view.Close();
             view.ShowDialog();
 
-            if (viewMoodel.OkayClicked)
+            if (viewModel.OkayClicked)
             {
                 UpdateDisplay();
             }

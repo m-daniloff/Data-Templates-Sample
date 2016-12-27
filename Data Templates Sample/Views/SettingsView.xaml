@@ -19,7 +19,7 @@
             
         </ListView>
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
-            <Button Content="Accept" Width="120" Margin="0, 10, 0, 5" Command="{Binding AcceptCommand}" Click="Button_Click"/>
+            <Button Content="Accept" Width="120" Margin="0, 10, 0, 5" Command="{Binding AcceptCommand}"/>
             <Button Content="Cancel" Width="120" Margin="20, 10, 10, 5" IsCancel="True"/>
         </StackPanel>
     </Grid>

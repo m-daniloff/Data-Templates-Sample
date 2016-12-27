@@ -23,10 +23,5 @@ namespace Data_Templates_Sample.Views
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
     }
 }
