@@ -1,0 +1,26 @@
+﻿<Window x:Class="Data_Templates_Sample.Views.SettingsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Data_Templates_Sample.Views"
+        xmlns:app="clr-namespace:Data_Templates_Sample.ViewModels"
+        mc:Ignorable="d"
+        Title="Settings View" Height="550" Width="725" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+       <app:SettingsTemplateSelector x:Key="templateSelector"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="0" Height="450" Margin="50, 0, 50, 0" ItemsSource="{Binding SettingsCollection}" ItemTemplateSelector="{StaticResource templateSelector }">
+            
+        </ListView>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
+            <Button Content="Accept" Width="120" Margin="0, 10, 0, 5" Command="{Binding AcceptCommand}" Click="Button_Click"/>
+            <Button Content="Cancel" Width="120" Margin="20, 10, 10, 5" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>
